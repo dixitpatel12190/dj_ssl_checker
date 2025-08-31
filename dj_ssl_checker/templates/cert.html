@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate & Key Comparison Result</title>
+    <style>
+        body {
+            background: #f4f8fb;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 36px 32px 32px 32px;
+            border-radius: 12px;
+            box-shadow: 0 6px 24px rgba(10, 213, 81, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #0078d4;
+            font-size: 2em;
+            margin-bottom: 24px;
+        }
+        .result {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 32px;
+            display: block;
+        }
+        .match {
+            color: #098831;
+        }
+        .nomatch {
+            color: #d40a0a;
+        }
+        a {
+            display: inline-block;
+            background: #0078d4;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        a:hover {
+            background: #08a300;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if "match" in analysed_text1|lower %}
+            <h1>Certificate Comparison done!</h1>
+            <span class="result match">{{analysed_text1}}</span>
+        {% else %}
+            <span class="result nomatch">{{analysed_text1}}</span>
+        {% endif %}
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
